@@ -5,8 +5,9 @@ RUN apt-get update \
         postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /usr/src/django
-COPY requirements.txt ./
-RUN pip install -r requirements.txt
+COPY requirements.txt /tmp
+RUN pip install -r /tmp/requirements.txt
+
+WORKDIR /usr/src/django/project
 
 EXPOSE 8000
