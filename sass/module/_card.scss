@@ -1,7 +1,12 @@
 .card {
-    color: #6A8EA8;
-    background-color: #484E4F;
-    padding: 15px 15px 15px 15px;
-    border-radius: 10px;
-    margin: 10px;
+    display: flex;
+
+    .card-item {
+        background-color: #484E4F;
+        padding: 15px 15px 15px 15px;
+        border-radius: 10px;
+        margin: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5);
+        width: calc(100% / 3);
+    }
 }
