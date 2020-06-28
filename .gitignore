@@ -1,2 +1,4 @@
 django/project/config/__pycache__
+django/project/blog/__pycache__
+django/project/blog/migrations
 db.sqlite3

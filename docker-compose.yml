@@ -8,3 +8,11 @@ services:
     tty: true
     ports:
       - "8000:8000"
+  node:
+    build: ./node
+    ports:
+      - "5555:80"
+    volumes:
+      - ./sass:/sass
+      - ./django/project/static/css:/css
+    stdin_open: true
