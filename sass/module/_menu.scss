@@ -1,6 +1,7 @@
 .menu {
     background-color: #1e2323;
     overflow-y: overlay;
+    width: 220px;
 
     ul.category {
         list-style: none;
@@ -19,7 +20,7 @@
         a, label {
             display: inline-block;
             font-size: 1.0em;
-            margin: 5px 0;
+            margin: 7px 0;
         }
 
     }

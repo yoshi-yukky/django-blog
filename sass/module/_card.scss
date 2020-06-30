@@ -3,10 +3,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-self: start;
+    padding: 35px 50px 35px 50px;
 
     .card-item {
         background-color: #42464a;
-        align-items: baseline;
         padding: 15px 15px 15px 15px;
         border-radius: 2.5px;
         box-shadow: 0 2.5px 5.5px 0 rgba(0, 0, 0, 0.5);
@@ -23,18 +23,11 @@
         .post-date {
             margin-bottom: 15px;
         }
-
-        p {
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;  
-            overflow: hidden;
-        }
-        
     }
 
     @media only screen and (max-width: 1020px){
         grid-template-columns: 1fr;
+        padding: 35px 0px 35px 0px;
     }
     
 }

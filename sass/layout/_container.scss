@@ -1,16 +1,11 @@
-.container { 
+.container {
     height: 95%;
     display: grid;
     grid-template-columns: 1fr 6fr;
 
     .content {
         display: grid;
-        padding: 35px 50px 35px 50px;
         grid-template-columns: 5fr 1fr;
         overflow-y: overlay;
-
-        @media only screen and (max-width: 1020px){
-            padding: 35px 0px 35px 0px;
-        }
     }
 }
