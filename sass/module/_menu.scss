@@ -1,0 +1,34 @@
+.menu {
+    background-color: #1e2323;
+    overflow-y: overlay;
+
+    ul.category {
+        list-style: none;
+
+        li {
+            text-align: left;
+            list-style: none;
+            padding: 0 15px;
+            align-self: start;
+        }
+
+        li.open {
+            background-color: #484E4F;
+        }
+
+        a, label {
+            display: inline-block;
+            font-size: 1.0em;
+            margin: 5px 0;
+        }
+
+    }
+
+    @media only screen and (max-width: 1020px){
+        background-color: unset;
+
+        ul.category {
+            display: none;
+        }
+    }
+}

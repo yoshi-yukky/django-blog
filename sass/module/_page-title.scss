@@ -1,11 +1,13 @@
 .page-title {
-    height: 80%;
+    height: 100%;
+    text-align: center;
 
     h1 {
-        height: auto;
+        height: 100%;
+        display: inline-block;
         font-family: 'Wendy One', sans-serif;
-        font-size: 2.5em;
-        color: #b5b552;
-        text-align: center;
+        font-size: 2.0em;
+        color: white;
+        // color: #b5b552;
     }
 }

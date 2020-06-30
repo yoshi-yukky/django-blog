@@ -4,6 +4,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Y.Y.Lab{% endblock %}</title>
         <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -14,12 +15,22 @@
                 <a href="/"><h1>Y.Y.Lab</h1></a>
             </div>
         </header>
-        <nav>
-            <ul class="category">
-                <li style="backgroud: url() left center no-repeat;">技術</li><li>読書</li><li>ゲーム</li>
-            </ul>
-    　　</nav>
         <div class="container">
+            <nav class="menu">
+                <ul class="category">
+                    <li class="open"><a href="/">Tech</a></li>
+                    <li><a href="/">Book</a></li>
+                    <li>
+                        <label>GAME</label>             
+                        <ul>
+                            <li><a href="/">FPS</a></li>
+                            <li><a href="/">MMO</a></li>
+                            <li><a href="/">SMART PHONE</a></li>
+                        <ul>
+                    </li>
+
+                </ul>
+    　　    </nav>
             <div class="content">
                 {% block content %}{% endblock %}
             </div>

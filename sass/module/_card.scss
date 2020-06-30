@@ -1,12 +1,40 @@
 .card {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-self: start;
 
     .card-item {
-        background-color: #484E4F;
+        background-color: #42464a;
+        align-items: baseline;
         padding: 15px 15px 15px 15px;
-        border-radius: 10px;
-        margin: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5);
-        width: calc(100% / 3);
+        border-radius: 2.5px;
+        box-shadow: 0 2.5px 5.5px 0 rgba(0, 0, 0, 0.5);
+
+        .post-title {
+            margin-bottom: 15px;
+        }
+
+        .post-category {
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+
+        .post-date {
+            margin-bottom: 15px;
+        }
+
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+        
     }
+
+    @media only screen and (max-width: 1020px){
+        grid-template-columns: 1fr;
+    }
+    
 }
