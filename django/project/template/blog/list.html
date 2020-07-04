@@ -3,13 +3,13 @@
 
 {% block content %}
     <div class="card">
-        {% for post in posts %}
+        {% for post in object_list %}
             <div class="card-item">
                 <a href="{% url 'blog-detail' post.id %}">
                     <h5 class="post-title">{{ post.title }}</h5>
                 </a>
                 <p class="post-category">{{ post.category.name }}</p>
-                <div class="post-date">{{ post.created_at | date:"Y/m/d" }}</div>
+                <div class="post-date">{{ post.created_at | date:"Y/m/d H:i" }}</div>
                 <p class="post-excerpt">{{ post.excerpt }}</p>
             </div>
         {% endfor %}

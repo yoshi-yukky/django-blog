@@ -16,21 +16,7 @@
             </div>
         </header>
         <div class="container">
-            <nav class="menu">
-                <ul class="category">
-                    <li class="open"><a href="/">Tech</a></li>
-                    <li><a href="/">Book</a></li>
-                    <li>
-                        <label>GAME</label>             
-                        <ul>
-                            <li><a href="/">FPS</a></li>
-                            <li><a href="/">MMO</a></li>
-                            <li><a href="/">SMART PHONE</a></li>
-                        <ul>
-                    </li>
-
-                </ul>
-    　　    </nav>
+            {% include "component/menu.html" %}
             <div class="content">
                 {% block content %}{% endblock %}
             </div>

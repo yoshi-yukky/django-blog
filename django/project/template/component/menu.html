@@ -1,0 +1,14 @@
+<nav class="menu">
+    <ul>
+        <li><a href="/">Top</a></li>
+        <li>
+            <label for="category">Category</label>
+            <input type="checkbox" id="category" checked/>
+            <ul class="inner">
+                {% for item in category %}
+                    <li><a href="{% url 'blog-category' item.id %}">{{ item.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</nav>

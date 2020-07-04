@@ -1,15 +1,35 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.views import generic
 
-from .models import Post
+from .models import Post, Category
 
-def index(request):
-    posts = Post.objects.order_by()
-    context = {'posts': posts}
-    return render(request, 'blog/index.html', context)
 
-def detail(request, post_id):
-    post = get_object_or_404(Post, pk=post_id)
-    context = {'post': post}
+class BlogMixin(generic.base.ContextMixin):
 
-    return render(request, 'blog/detail.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = Category.objects.all()
+        return context
+
+class BlogList(BlogMixin, generic.ListView):
+    template_name = "blog/list.html"
+    model = Post
+    ordering = ['-created_at']
+    paginate_by = 5
+
+class BlogDetail(BlogMixin, generic.DetailView):
+    template_name = "blog/detail.html"
+    model = Post
+
+class BlogCategory(BlogMixin, generic.DetailView):
+    template_name = "blog/list.html"
+    model = Post
+    ordering = ['-created_at']
+    paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        data_list = Post.objects.filter(category=self.kwargs['pk'])
+        context['object_list'] = data_list
+        return context
