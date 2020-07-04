@@ -8,4 +8,12 @@
         grid-template-columns: 5fr 1fr;
         overflow-y: overlay;
     }
+
+    @media only screen and (max-width: 1020px){
+        display: block;
+
+        .content {
+            display: block;
+        }
+    }
 }
