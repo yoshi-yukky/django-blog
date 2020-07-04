@@ -3,32 +3,40 @@
     overflow-y: overlay;
     width: 220px;
 
-    ul.category {
+    ul {
         list-style: none;
 
-        li {
-            text-align: left;
-            list-style: none;
-            padding: 0 15px;
-            align-self: start;
-        }
+        &.inner {
+            display: none;
 
-        li.open {
-            background-color: #484E4F;
+            a, label {
+                padding-left: 30px;
+            }
         }
-
-        a, label {
-            display: inline-block;
-            font-size: 1.0em;
-            margin: 7px 0;
+        
+        input:checked + ul {
+            display: block;
         }
+    }
 
+    a, label {
+        display: block;
+        padding: 7px 0px 7px 15px;
+        font-size: 1.0em;
+    }
+
+    a:hover, label:hover {
+        background-color: #484E4F;
+    }
+
+    input {
+        display: none;
     }
 
     @media only screen and (max-width: 1020px){
         display: none;
 
-        ul.category {
+        ul {
             display: none;
         }
     }
