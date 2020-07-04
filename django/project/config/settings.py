@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Library
     'markdownx',
-    # apps
+    # Apps
     'blog.apps.BlogConfig',
 ]
 
