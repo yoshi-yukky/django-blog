@@ -8,8 +8,8 @@
                 <a href="{% url 'blog-detail' post.id %}">
                     <h5 class="post-title">{{ post.title }}</h5>
                 </a>
-                <p class="post-category">仮カテゴリ</p>
-                <div class="post-date">{{ post.created_at }}</div>
+                <p class="post-category">{{ post.category.name }}</p>
+                <div class="post-date">{{ post.created_at | date:"Y/m/d" }}</div>
                 <p class="post-excerpt">{{ post.excerpt }}</p>
             </div>
         {% endfor %}
