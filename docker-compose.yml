@@ -3,11 +3,22 @@ services:
   django:
     build: ./django
     volumes:
-      - ./django/:/usr/src/django
+      - ./django:/usr/src/django
+      - ./static-files:/home/static-files
     command: python3 manage.py runserver 0:8000
     tty: true
     ports:
       - "8000:8000"
+  nginx:
+    restart: always
+    image: nginx
+    depends_on:
+      - django
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx/conf:/etc/nginx/conf.d/"
+      - "./static-files:/opt/apps/static/"
   node:
     build: ./node
     ports:

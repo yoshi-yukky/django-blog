@@ -3,3 +3,4 @@ django/project/blog/__pycache__
 django/project/blog/migrations
 db.sqlite3
 *.css
+/static-files
