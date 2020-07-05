@@ -6,23 +6,23 @@
     ul {
         list-style: none;
 
-        &.inner {
-            display: none;
-
-            a, label {
-                padding-left: 30px;
-            }
+        a, label {
+            display: block;
+            padding: 7px 0px 7px 15px;
+            font-size: 1.0em;
         }
         
         input:checked + ul {
             display: block;
         }
     }
+    
+    ul.inner {
+        display: none;
 
-    a, label {
-        display: block;
-        padding: 7px 0px 7px 15px;
-        font-size: 1.0em;
+        a, label {
+            padding-left: 30px;
+        }
     }
 
     a:hover, label:hover {
