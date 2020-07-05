@@ -3,7 +3,7 @@
         <li><a href="/">Top</a></li>
         <li>
             <label for="category">Category</label>
-            <input type="checkbox" id="category" checked/>
+            <input type="checkbox" id="category" />
             <ul class="inner">
                 {% for item in category %}
                     <li><a href="{% url 'blog-category' item.id %}">{{ item.name }}</a></li>

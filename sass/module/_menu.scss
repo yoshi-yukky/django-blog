@@ -34,10 +34,27 @@
     }
 
     @media only screen and (max-width: 1020px){
-        display: none;
+        width: 100%;
+        text-align: center;
 
         ul {
-            display: none;
+            display: block;
+
+            a, label {
+                padding: 7px 15px 7px 15px;
+            }
+
+            input:checked + ul {
+                position: relative;
+            }
+
         }
+
+        ul.inner {
+            a, label {
+                padding-left: 15px;
+            }
+        }
+
     }
 }
