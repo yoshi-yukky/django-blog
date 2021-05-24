@@ -18,7 +18,7 @@
                     <p>{{ post.category.name }}</p>
                 </div>
                 <p class="post-excerpt">
-                    {% if post.exerpt %}
+                    {% if post.excerpt %}
                         {{ post.excerpt }}
                     {% else %}
                         {{ post.content | slice:"0:150" }}
