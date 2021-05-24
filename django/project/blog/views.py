@@ -1,35 +1,25 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic
+from django.db.models import Count, Prefetch
 
 from .models import Post, Category
 
 
-class BlogMixin(generic.base.ContextMixin):
-
+class BlogContextMixin(generic.base.ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category'] = Category.objects.all()
+        qs = Category.objects.prefetch_related(Prefetch("post_set", queryset=Post.objects.all(), to_attr="prefetched_post"))
+        context['categories'] = qs.all()
         return context
 
-class BlogList(BlogMixin, generic.ListView):
+class BlogList(BlogContextMixin, generic.ListView):
     template_name = "blog/list.html"
     model = Post
+    queryset = Post.objects.select_related("category")
     ordering = ['-created_at']
     paginate_by = 5
 
-class BlogDetail(BlogMixin, generic.DetailView):
+class BlogDetail(BlogContextMixin, generic.DetailView):
     template_name = "blog/detail.html"
     model = Post
-
-class BlogCategory(BlogMixin, generic.DetailView):
-    template_name = "blog/list.html"
-    model = Post
-    ordering = ['-created_at']
-    paginate_by = 5
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        data_list = Post.objects.filter(category=self.kwargs['pk'])
-        context['object_list'] = data_list
-        return context

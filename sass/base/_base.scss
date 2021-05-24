@@ -1,60 +1,25 @@
 html {
     height: 100vh;
+    background-color: #d8d8dc;
+    padding: 0 250px;
 }
 
 body {
     height: 100%;
+    padding: 0 150px;
     font-family: "M PLUS Rounded 1c", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     font-size: 20px;
+    font-weight: 600;
+    color: #3f434b;
     letter-spacing: 1.2px;
     line-height: 1.5;
-    background-color: #282d30;
-    color: #c8c8c8;
+    background-color: white;
 }
 
-h1 {
-    font-size: 2.2em;
-    color: #6A8EA8;
+a {
+    text-decoration: none;
 }
 
-h2 {
-    font-size: 2.0em;
-    color: #6A8EA8;
-}
-
-h3 {
-    font-size: 1.8em;
-    color: #6A8EA8;
-}
-
-h4 {
-    font-size: 1.6em;
-    color: #6A8EA8;
-}
-
-h5 {
-    font-size: 1.4em;
-    color: #6A8EA8;
-}
-
-h6 {
-    font-size: 1.2em;
-    color: #6A8EA8;
-}
-
-p {
-    font-size: 1.0em;
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-::-webkit-scrollbar-track {
-    display: none;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 1.5px;
-	background:#42464a;
+a:link, a:visited, a:hover, a:active {
+    color: #3f434b;
 }

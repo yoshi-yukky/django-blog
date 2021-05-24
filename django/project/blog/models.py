@@ -16,8 +16,8 @@ class Post(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT
     )
-    content = MarkdownxField()
-    excerpt = models.CharField(max_length=150)
+    content = models.CharField(max_length=10000)
+    excerpt = models.CharField(max_length=150, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

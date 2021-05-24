@@ -1,10 +1,11 @@
-@import "./base/_reset.scss";
 @import "./base/_base.scss";
 
 @import "./layout/_header.scss";
 @import "./layout/_container.scss";
+@import "./layout/_menu.scss";
+@import "./layout/_side-menu.scss";
 
 @import "./module/_page-title.scss";
-@import "./module/_menu.scss";
 @import "./module/_card.scss";
-@import "./module/_detail.scss";
+@import "./module/_category.scss";
+// @import "./module/_detail.scss";

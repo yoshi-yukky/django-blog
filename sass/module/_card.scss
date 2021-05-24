@@ -1,32 +1,50 @@
 .card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-self: start;
-    padding: 35px 50px 35px 50px;
+    width: 100%;
 
     .card-item {
-        background-color: #42464a;
-        box-shadow: 0 2.5px 5.5px 0 rgba(0, 0, 0, 0.5);
-        padding: 15px 15px 15px 15px;
-        border-radius: 2.5px;
+        text-align: left;
+        padding-top: 15px;
+        padding-left: 15px;
 
         .post-title {
-            margin-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 5px;
+
+            a {
+                color: #d2b48c;
+                font-size: 25px;
+            }
         }
 
         .post-category {
-            margin-bottom: 15px;
-            text-decoration: underline;
+            p {
+                display: inline-block;
+                margin: 2px;
+                padding: 1px 8px;
+                background-color: #778899;
+                border-radius: 4px;
+                color: #f5f5f5;
+                font-size: 14px;
+            }
         }
 
         .post-date {
+            font-size: 15px;
+            
+            p {
+                margin-bottom: 5px;
+            }
+
+            img {
+                height: 15px;
+                width: 15px;
+            }
+        }
+        
+        .post-excerpt {
+            font-size: 19px;
             margin-bottom: 15px;
         }
     }
 
-    @media only screen and (max-width: 1020px){
-        grid-template-columns: 1fr;
-    }
-    
 }

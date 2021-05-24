@@ -1,15 +1,29 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="card">
         {% for post in object_list %}
             <div class="card-item">
+                <div class="post-date">
+                    <p>
+                        <img src="{% static 'svg/calender.svg' %}" />
+                        {{ post.created_at | date:"Y/m/d" }}
+                    </p>
+                </div>
                 <a href="{% url 'blog-detail' post.id %}">
-                    <h5 class="post-title">{{ post.title }}</h5>
+                    <p class="post-title">{{ post.title }}</h5>
                 </a>
-                <p class="post-category">{{ post.category.name }}</p>
-                <div class="post-date">{{ post.created_at | date:"Y/m/d H:i" }}</div>
-                <p class="post-excerpt">{{ post.excerpt }}</p>
+                <div class="post-category">
+                    <p>{{ post.category.name }}</p>
+                </div>
+                <p class="post-excerpt">
+                    {% if post.exerpt %}
+                        {{ post.excerpt }}
+                    {% else %}
+                        {{ post.content | slice:"0:150" }}
+                    {% endif %}
+                </p>
             </div>
         {% endfor %}
     </div>

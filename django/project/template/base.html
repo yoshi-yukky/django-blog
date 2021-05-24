@@ -9,6 +9,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/skelton.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     </head>
     <body>
         <header>
@@ -16,13 +19,31 @@
                 <a href="/"><h1>Y.Y.Lab</h1></a>
             </div>
         </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">TOP</a></li>
+                <li><a href="/">DUMMY</a></li>
+                <li><a href="/">DUMMY</a></li>
+                <li><a href="/">DUMMY</a></li>
+            </ul>
+        </nav>
         <div class="container">
-            {% include "component/menu.html" %}
             <div class="content">
                 {% block content %}{% endblock %}
             </div>
         </div>
-
-        <footer/>
+        <div class="side-menu">
+            <div class="category">
+                <p class="category-bar">カテゴリー</p>
+                {% for category in categories %}
+                    <p>
+                        {{ category.name }}
+                        <label class="category-count-badge">
+                            {{ category.prefetched_post | length }}
+                        </label>
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
     </body>
 </html>
