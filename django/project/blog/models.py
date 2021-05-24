@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
 
+
 class Category(models.Model):
     name = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -11,11 +12,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Post(models.Model):
     title = models.CharField(max_length=50)
-    category = models.ForeignKey(
-        Category, on_delete=models.PROTECT
-    )
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
     content = models.CharField(max_length=10000)
     excerpt = models.CharField(max_length=150, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
