@@ -1,16 +1,13 @@
 .container {
-    float: left;
-    text-align: center;
+    display: flex;
     background-color: white;
 
     .content {
         width: 100%;
-        text-align: center;
     }
 
     @media only screen and (max-width: 1020px){
         .content {
-            text-align: center;
             margin: 0 40px;
         }
     }

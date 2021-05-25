@@ -17,9 +17,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from common_views import ProfileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('profile/', ProfileView.as_view(), name="profile"),
     path('', include('blog.urls')),
 ] + static(
     settings.STATIC_URL,

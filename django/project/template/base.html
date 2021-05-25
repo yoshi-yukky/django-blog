@@ -22,28 +22,29 @@
         <nav class="menu">
             <ul>
                 <li><a href="/">TOP</a></li>
-                <li><a href="/">DUMMY</a></li>
-                <li><a href="/">DUMMY</a></li>
-                <li><a href="/">DUMMY</a></li>
+                <li><a href="{% url 'profile' %}">PROFILE</a></li>
+                <li><a href="https://github.com/engineer-chogath">GITHUB</a></li>
             </ul>
         </nav>
         <div class="container">
             <div class="content">
                 {% block content %}{% endblock %}
             </div>
+            {% if not disable_category %}
+                <div class="side-menu">
+                    <div class="category">
+                        <p class="category-bar">カテゴリー</p>
+                        {% for category in categories %}
+                            <p>
+                                {{ category.name }}
+                                <label class="category-count-badge">
+                                    {{ category.prefetched_post | length }}
+                                </label>
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </body>
         </div>
-        <div class="side-menu">
-            <div class="category">
-                <p class="category-bar">カテゴリー</p>
-                {% for category in categories %}
-                    <p>
-                        {{ category.name }}
-                        <label class="category-count-badge">
-                            {{ category.prefetched_post | length }}
-                        </label>
-                    </p>
-                {% endfor %}
-            </div>
-        </div>
-    </body>
 </html>

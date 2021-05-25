@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic
 from django.db.models import Count, Prefetch
-
 from .models import Post, Category
 
 
@@ -16,7 +15,7 @@ class BlogContextMixin(generic.base.ContextMixin):
         return context
 
 
-class BlogList(BlogContextMixin, generic.ListView):
+class BlogListView(generic.ListView, BlogContextMixin):
     template_name = "blog/list.html"
     model = Post
     queryset = Post.objects.select_related("category")
@@ -24,6 +23,6 @@ class BlogList(BlogContextMixin, generic.ListView):
     paginate_by = 5
 
 
-class BlogDetail(BlogContextMixin, generic.DetailView):
+class BlogDetailView(generic.DetailView, BlogContextMixin):
     template_name = "blog/detail.html"
     model = Post
