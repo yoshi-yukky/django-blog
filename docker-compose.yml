@@ -4,6 +4,7 @@ services:
     build: ./django
     volumes:
       - ./django:/usr/src/django
+      - ./static-files:/home/static-files
     command: python3 manage.py runserver 0:8000
     tty: true
     ports:
@@ -17,7 +18,7 @@ services:
       - "80:80"
     volumes:
       - "./nginx/conf:/etc/nginx/conf.d/"
-      - "./django/project/static:/opt/apps/static/"
+      - "./static-files:/opt/apps/static/"
   node:
     build: ./node
     ports:
