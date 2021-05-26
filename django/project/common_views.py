@@ -1,7 +1,7 @@
 from django.views import generic
 
 
-class ProfileView(generic.TemplateView, generic.base.ContextMixin):
+class ProfileView(generic.TemplateView):
     template_name = "profile.html"
 
     def get_context_data(self, **kwargs):
