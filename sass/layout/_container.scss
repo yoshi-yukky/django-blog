@@ -3,7 +3,11 @@
     background-color: white;
 
     .content {
-        width: 100%;
+        width: 70%;
+
+        p {
+            word-wrap: break-word;
+        }
     }
 
     @media only screen and (max-width: 1020px){
