@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
     <div class="detail">
+        <div class="post-date">
+            <p>
+                <img src="{% static 'svg/calender.svg' %}" />
+                {{ post.created_at|date:"Y/m/d" }}
+            </p>
+        </div>
         <h1 class="post-title">{{ post.title }}</h1>
-        <p class="post-date">{{ post.created_at | date:"Y/m/d" }}</p>
-        {{ post.content }}
+        <p>{{ post.content }}</p>
     </div>
 {% endblock %}

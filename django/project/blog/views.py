@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic
 from django.db.models import Count, Prefetch
-from .models import Post, Category
+from blog.models import Post, Category
+from common.decorators import disable_side_bar
 
 
 class BlogContextMixin(generic.base.ContextMixin):
@@ -23,6 +24,13 @@ class BlogListView(generic.ListView, BlogContextMixin):
     paginate_by = 5
 
 
+class BlogListByFilteredCategoryView(BlogListView):
+    def get_queryset(self):
+        category_name = self.kwargs["name"]
+        return Post.objects.filter(category__name=category_name).select_related("category")
+
+
+@disable_side_bar
 class BlogDetailView(generic.DetailView, BlogContextMixin):
     template_name = "blog/detail.html"
     model = Post

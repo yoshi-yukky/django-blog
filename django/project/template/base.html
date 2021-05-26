@@ -29,22 +29,22 @@
         <div class="container">
             <div class="content">
                 {% block content %}{% endblock %}
-            </div>
-            {% if not disable_category %}
-                <div class="side-menu">
-                    <div class="category">
-                        <p class="category-bar">カテゴリー</p>
-                        {% for category in categories %}
-                            <p>
-                                {{ category.name }}
-                                <label class="category-count-badge">
-                                    {{ category.prefetched_post | length }}
-                                </label>
-                            </p>
-                        {% endfor %}
+                {% if not disable_side_menu %}
+                    <div class="side-menu">
+                        <div class="category">
+                            <p class="category-bar">カテゴリー</p>
+                            {% for category in categories %}
+                                <p>
+                                    {{ category.name }}
+                                    <label class="category-count-badge">
+                                        {{ category.prefetched_post|length }}
+                                    </label>
+                                </p>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
+                {% endif %}
+            </div>
         </div>
         <footer></footer>
     </body>

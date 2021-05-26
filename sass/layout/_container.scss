@@ -1,13 +1,8 @@
 .container {
-    display: flex;
     background-color: white;
 
     .content {
-        width: 70%;
-
-        p {
-            word-wrap: break-word;
-        }
+        display: flex;
     }
 
     @media only screen and (max-width: 1020px){

@@ -1,50 +1,11 @@
 .card {
-    width: 70%;
+    width: 80%;
 
     .card-item {
         text-align: left;
         padding-top: 15px;
         padding-left: 15px;
-
-        .post-title {
-            margin-top: 0;
-            margin-bottom: 5px;
-
-            a {
-                color: #d2b48c;
-                font-size: 25px;
-            }
-        }
-
-        .post-category {
-            p {
-                display: inline-block;
-                margin: 2px;
-                padding: 1px 8px;
-                background-color: #778899;
-                border-radius: 4px;
-                color: #f5f5f5;
-                font-size: 14px;
-            }
-        }
-
-        .post-date {
-            font-size: 15px;
-            
-            p {
-                margin-bottom: 5px;
-            }
-
-            img {
-                height: 15px;
-                width: 15px;
-            }
-        }
-        
-        .post-excerpt {
-            font-size: 19px;
-            margin-bottom: 15px;
-        }
+        padding-right: 50px;
     }
 
 }
