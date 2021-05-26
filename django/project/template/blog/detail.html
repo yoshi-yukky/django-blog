@@ -6,6 +6,6 @@
     <div class="detail">
         <h1 class="post-title">{{ post.title }}</h1>
         <p class="post-date">{{ post.created_at | date:"Y/m/d" }}</p>
-        {{ post.content_safe }}
+        {{ post.content }}
     </div>
 {% endblock %}
