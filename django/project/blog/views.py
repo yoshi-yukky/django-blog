@@ -30,7 +30,6 @@ class BlogListByFilteredCategoryView(BlogListView):
         return Post.objects.filter(category__name=category_name).select_related("category")
 
 
-@disable_side_bar
 class BlogDetailView(generic.DetailView, BlogContextMixin):
     template_name = "blog/detail.html"
     model = Post

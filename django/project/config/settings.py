@@ -132,6 +132,9 @@ STATICFILES_DIRS  = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+SUMMERNOTE_THEME = 'bs4'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,

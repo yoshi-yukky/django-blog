@@ -11,7 +11,7 @@
                         {{ post.created_at|date:"Y/m/d" }}
                     </p>
                 </div>
-                <a href="{% url 'blog-detail' post.id %}">
+                <a href="{% url 'blog_detail' post.id %}">
                     <p class="post-title">{{ post.title }}</h5>
                 </a>
                 <div class="post-category">
@@ -21,8 +21,8 @@
                     {% if post.excerpt %}
                         {{ post.excerpt }}
                     {% else %}
-                        {{ post.content|slice:"0:150" }}
-                        {% if post.content|length > 150 %}
+                        {{ post.content|striptags|slice:"0:150" }}
+                        {% if post.content|striptags|length > 150 %}
                             ...
                         {% endif %}
                     {% endif %}

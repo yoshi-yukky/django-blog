@@ -35,10 +35,12 @@
                             <p class="category-bar">カテゴリー</p>
                             {% for category in categories %}
                                 <p>
-                                    {{ category.name }}
-                                    <label class="category-count-badge">
-                                        {{ category.prefetched_post|length }}
-                                    </label>
+                                    <a href="{% url 'blog_category' name=category.name %}">
+                                        {{ category.name }}
+                                        <label class="category-count-badge">
+                                            （{{ category.prefetched_post|length }}）
+                                        </label>
+                                    </a>
                                 </p>
                             {% endfor %}
                         </div>
